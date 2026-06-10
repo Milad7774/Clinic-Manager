@@ -1,11 +1,11 @@
-# 🦷 DentDesk - Dental Clinic Management System
+# DentDesk - Dental Clinic Management System
 
 A comprehensive dental clinic management application built with React. Track patients, manage appointments, record treatment sessions, and monitor payments — all in one place. Perfect for small to medium dental clinics.
 
 ## 🔗 Live Demo
 [View Live Demo](https://milad7774.github.io/Dentist-App/)
 
-## ✨ Features
+## Features
 
 ### Patient Management
 -  Add new patients with name, phone number, and contact details
@@ -34,7 +34,7 @@ A comprehensive dental clinic management application built with React. Track pat
 -  Toast notifications for success/error feedback
 -  Mobile-first responsive design
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **React 18** - UI library
 - **React Router DOM** - Navigation between pages
@@ -42,5 +42,3 @@ A comprehensive dental clinic management application built with React. Track pat
 - **CSS3** - Styling with Flexbox/Grid
 - **LocalStorage API** - Data persistence (patients + sessions)
 - **Date API** - Date comparison and sorting
-
-## 📁 Project Structure
