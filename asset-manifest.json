@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Dentist-App/static/css/main.843cf01c.css",
-    "main.js": "/Dentist-App/static/js/main.ca3daace.js",
-    "static/js/453.d9a5ea74.chunk.js": "/Dentist-App/static/js/453.d9a5ea74.chunk.js",
-    "index.html": "/Dentist-App/index.html",
-    "main.843cf01c.css.map": "/Dentist-App/static/css/main.843cf01c.css.map",
-    "main.ca3daace.js.map": "/Dentist-App/static/js/main.ca3daace.js.map",
-    "453.d9a5ea74.chunk.js.map": "/Dentist-App/static/js/453.d9a5ea74.chunk.js.map"
+    "main.css": "/Clinic-Manager/static/css/main.843cf01c.css",
+    "main.js": "/Clinic-Manager/static/js/main.1a6da2de.js",
+    "static/js/453.d9a5ea74.chunk.js": "/Clinic-Manager/static/js/453.d9a5ea74.chunk.js",
+    "index.html": "/Clinic-Manager/index.html",
+    "main.843cf01c.css.map": "/Clinic-Manager/static/css/main.843cf01c.css.map",
+    "main.1a6da2de.js.map": "/Clinic-Manager/static/js/main.1a6da2de.js.map",
+    "453.d9a5ea74.chunk.js.map": "/Clinic-Manager/static/js/453.d9a5ea74.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.843cf01c.css",
-    "static/js/main.ca3daace.js"
+    "static/js/main.1a6da2de.js"
   ]
 }
