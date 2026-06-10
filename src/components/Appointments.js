@@ -7,6 +7,29 @@ const Appointments = () => {
 
   let stop = true;
 
+  let sessions = [];
+
+  list.map((itemList, indexList) =>{
+    list[indexList].sessions.map((itemSessions, indexSessoins) =>{
+      const patientSession = {
+        name: itemList.name,
+        session: itemSessions.sessionDate,
+        time: itemSessions.time,
+        phoneNumber: itemList.phoneNumber
+      }
+      sessions = [...sessions, patientSession]
+    })
+  })
+  console.log(sessions, "Before Sorting")
+  sessions.sort((a, b) => {
+    const dateCompare = new Date(a.session) - new Date(b.session);
+    if (dateCompare !== 0) return dateCompare;
+    return a.time.localeCompare(b.time);
+    });
+    console.log(sessions, "After Sorting");
+
+
+
   console.log(list)
 
   const [notFound, setNotFound] = useState(list.length === 0);
@@ -28,24 +51,16 @@ const Appointments = () => {
               </tr>
             </thead>
             <tbody>
-              {list.map((itemList, index) => (
-                list[index].sessions.map((item, indexSessions) =>{
-                    if(new Date(item.sessionDate).setHours(0, 0, 0, 0) >= new Date().setHours(0, 0, 0, 0)){
-                        stop = false
-                        return(
-                            <tr key={index++}>
-                                <td>{ itemList.name }</td>
-                                <td> {itemList.phoneNumber} </td>
-                                <td> {item.sessionDate} </td>
-                                <td> {item.time} </td>
-                            </tr>
-                            )
-                    }
-                    else if(index + 1 == list.length && indexSessions + 1 == list[index].sessions.length && stop){
-                        setNotFound(true)
-                    }
-                })
-              ))}
+              {sessions.map((item, index) =>{
+                return(
+                  <tr key={index}>
+                    <td> {item.name} </td>
+                    <td> {item.phoneNumber} </td>
+                    <td> {item.session} </td>
+                    <td> {item.time} </td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>

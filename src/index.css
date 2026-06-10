@@ -263,6 +263,7 @@ th {
   overflow-x: auto;
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
   justify-content: space-around;
   align-items: center;
   gap: 20px;
@@ -290,7 +291,7 @@ th {
   font-weight: bold;
   user-select: none;
   font-size: 15px;
-  width: 20%;
+  width: 26%;
   margin: 0 auto;
   text-align: center;
   margin-top: 50px;

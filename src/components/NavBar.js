@@ -22,7 +22,7 @@ const NavBar = () => {
           Add Patient
         </NavLink>
         <NavLink
-          to="/Apoointments"
+          to="/Appointments"
           className={({ isActive }) =>
             isActive ? "active-style" : "normal-style"
           }
