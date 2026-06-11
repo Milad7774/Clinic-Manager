@@ -9,7 +9,7 @@ app.use(express.json());
 // Paste your VAPID keys here
 const vapidKeys = {
   publicKey: 'BLGOPLxnw-ON98vDhXWJz-yN0p97WFeSdwlWTSJ3BAmuBNpOw0U-v721GKmI4KFplRb0SPNd4trXMeWo5Frr9Mo',
-  privateKey: 'AWy5PVm-Twhs_LGGhvtaal2IH2Ilie64fBI81tzNVtE'
+  privateKey: process.env.VAPID_PRIVATE_KEY
 };
 
 webpush.setVapidDetails(
