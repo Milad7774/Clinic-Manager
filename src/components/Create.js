@@ -32,7 +32,14 @@ const Create = () =>{
             //sortedList
             let sortedList = [...list, patients];
             sortedList = sortedList.sort((a,b) => a.name.localeCompare(b.name));
-            localStorage.setItem('mylist', JSON.stringify(sortedList));
+            try{
+                localStorage.setItem('mylist', JSON.stringify(sortedList));
+            }
+            catch(err){
+                if(err.name === 'QuotaExceededError'){
+                    alert("Maximum Storage is Exceeded")
+                }
+            }
             setName('');
             setPhoneNumber('');
             success();
