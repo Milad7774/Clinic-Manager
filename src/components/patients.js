@@ -32,9 +32,10 @@ const Patients = ({ list, onDelete }) => {
             {list.map((item, index) => (
               <tr key={index}>
                 <td> <Link to={`/PatientSessions/${index}`}>  {item.name} </Link></td>
-                <td>{item.phoneNumber}</td>
-                <td> <Link to={`/sessions/${index}`}> { item.sessions.length || 'Add Now'} </Link></td>
-                <td>
+                <td> {item.phoneNumber} </td>
+                <td>  { item.sessions.length || <Link to={`/sessions/${index}`}> Add </Link>}  </td>
+                <td style={{display:'flex', justifyContent:'center', gap: '10px'}}>
+                <Link to={`/sessions/${index}`} style={{textDecoration: 'none'}}><span> &#128137; </span> </Link>
                   <span onClick={() => onDelete(index)}>&#x274C;</span>
                 </td>
               </tr>

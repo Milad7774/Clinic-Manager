@@ -10,8 +10,6 @@ const PatientSessions = () => {
 
     const [patientSessions, setSessions] = useState(() => list[id].sessions)
 
-    const [notFound, setNotFound] = useState(() => list[id].sessions.length === 0)
-
     //Calculate Amount and sessions
     let totalPaid = 0;
 
