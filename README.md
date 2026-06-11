@@ -3,7 +3,7 @@
 A comprehensive dental clinic management application built with React. Track patients, manage appointments, record treatment sessions, and monitor payments — all in one place. Perfect for small to medium dental clinics.
 
 ## 🔗 Live Demo
-[View Live Demo](https://milad7774.github.io/Dentist-App/dentist-App)
+[View Live Demo](https://milad7774.github.io/Clinic-Manager/)
 
 ## Features
 
