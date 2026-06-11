@@ -6,7 +6,6 @@ import { Toaster } from 'react-hot-toast';
 import Sessions from "./components/SessionsAdd";
 import PatientSessions from "./components/PatientSessions";
 import Appointments from "./components/Appointments";
-import NotificationButton from "./NotificatoinsPOP";
 
 const App = () => {
 
@@ -16,7 +15,6 @@ const App = () => {
     <Toaster position="top-right" reverseOrder={false} />
       <div>
       <NavBar/>
-      <NotificationButton/>
       </div>
       <Routes>
         <Route path="/" element = {<Navigate to='/Create' replace/>}/>
