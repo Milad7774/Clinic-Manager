@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clinic-manager-v1';
+const CACHE_NAME = 'clinic-manager-v2';
 
 const urlsToCache = [
   '/Clinic-Manager/',
