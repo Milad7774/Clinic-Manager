@@ -23,6 +23,7 @@ const Create = () =>{
         }
         else{
             const patients = {
+                id: Date.now(),
                 name: name,
                 phoneNumber: phoneNumber,
                 sessions: []

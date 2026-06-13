@@ -46,7 +46,7 @@ const Patients = ({ list, onDelete }) => {
           <tbody>
             {data.map((item, index) => (
               <tr key={index}>
-                <td> <Link to={`/PatientSessions/${index}`}>  {item.name} </Link></td>
+                <td> <Link to={`/PatientSessions/${item.id}`}>  {item.name} </Link></td>
                 <td> {item.phoneNumber} </td>
                 <td>  { item.sessions.length || <Link to={`/sessions/${index}`}> Add </Link>}  </td>
                 <td style={{display:'flex', justifyContent:'center', gap: '10px'}}>

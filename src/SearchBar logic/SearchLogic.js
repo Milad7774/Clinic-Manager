@@ -14,6 +14,6 @@ const useSearchBar = (list, search) =>{
           setData(filtered);
         }
       }, [search]);
-      return { data : data }
+      return {data}
 }
 export default useSearchBar

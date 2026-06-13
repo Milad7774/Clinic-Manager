@@ -8,7 +8,11 @@ const PatientSessions = () => {
 
     const [list] = useState( () => JSON.parse(localStorage.getItem('mylist')));
 
-    const [patientSessions, setSessions] = useState(() => list[id].sessions)
+    const sessions = list.find((item) => item.id === Number(id));
+    console.log("New Sessions", sessions.sessions);
+
+    const [patientSessions, setSessions] = useState(sessions.sessions)
+
 
     //Calculate Amount and sessions
     let totalPaid = 0;
@@ -41,7 +45,7 @@ const PatientSessions = () => {
 
   return (
     <div>
-        <div className="patientName" > {list[id].name} </div>
+        <div className="patientName" > {sessions.name} </div>
       <div className="div-table">
         <table className="table">
           <thead>
