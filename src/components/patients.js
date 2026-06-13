@@ -1,10 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useSearchBar from "../SearchBar logic/SearchLogic";
 
 const Patients = ({ list, onDelete }) => {
   //Calculating Number of patients and sessions
   let numPatients = 0;
 
   let numSessions = 0;
+
+  const [search, setSearch] = useState('');
+
+  const {data} = useSearchBar(list, search);
 
   list.map((item =>{
     numPatients++;
@@ -17,8 +23,17 @@ const Patients = ({ list, onDelete }) => {
   console.log(list);
   return (
     <div>
-      <div className="patientName" > Patients </div>
+      {/* <div className="patientName" >Patient</div> */}
       <div className="div-table">
+        <input
+            className="searchBar"
+            type="text"
+            placeholder="Search Name"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+          />
         <table className="table">
           <thead>
             <tr>
@@ -29,7 +44,7 @@ const Patients = ({ list, onDelete }) => {
             </tr>
           </thead>
           <tbody>
-            {list.map((item, index) => (
+            {data.map((item, index) => (
               <tr key={index}>
                 <td> <Link to={`/PatientSessions/${index}`}>  {item.name} </Link></td>
                 <td> {item.phoneNumber} </td>

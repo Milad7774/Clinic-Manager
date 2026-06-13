@@ -31,8 +31,8 @@ const Sessions = () => {
 
   function handleData(e) {
     e.preventDefault();
-
-    if (description === "" || paid === "") {
+    //Validatoin
+    if (description === "" || paid === "" || time === "") {
       failed();
       return;
     }
@@ -79,7 +79,7 @@ const Sessions = () => {
         <h1> {list[id].name} </h1>
         <div>
           <label htmlFor="Date">
-            Session Date<span style={{ color: "red" }}>*</span>:
+            Session Date:
           </label>
           <input
             type="Date"
@@ -92,7 +92,7 @@ const Sessions = () => {
         <div>
           <label htmlFor="Time">
             {" "}
-            Time<span style={{ color: "red" }}>*</span>:{" "}
+            Time:{" "}
           </label>
           <input
             type="time"
