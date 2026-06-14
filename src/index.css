@@ -302,6 +302,11 @@ th {
 
 /* Appointmetns */
 
+.wrapper{
+  min-width: 100%;
+  display: inline-block;
+}
+
 .searchBar{
   background-color: rgb(207, 207, 207);
   width: 100%;

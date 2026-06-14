@@ -66,7 +66,8 @@ const Appointments = () => {
       {!notFound && (
         <div>
           <div className="div-table">
-          <input
+            <div className="wrapper">
+            <input
             className="searchBar"
             type="text"
             placeholder="Search Name"
@@ -97,6 +98,8 @@ const Appointments = () => {
                 })}
               </tbody>
             </table>
+            </div>
+          
           </div>
         </div>
       )}

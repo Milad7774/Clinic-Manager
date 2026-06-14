@@ -25,6 +25,7 @@ const Patients = ({ list, onDelete }) => {
     <div>
       {/* <div className="patientName" >Patient</div> */}
       <div className="div-table">
+        <div className="wrapper">
         <input
             className="searchBar"
             type="text"
@@ -57,6 +58,8 @@ const Patients = ({ list, onDelete }) => {
             ))}
           </tbody>
         </table>
+        </div>
+        
       </div>
 
       <div className="total">
