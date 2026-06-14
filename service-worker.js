@@ -1,6 +1,6 @@
 // public/service-worker.js
 
-const CACHE_NAME = "clinic-manager-v8";
+const CACHE_NAME = "clinic-manager-v9";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
