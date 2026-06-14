@@ -1,66 +1,52 @@
-// This file registers the service worker
-const isLocalhost = Boolean(
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '[::1]' ||
-    window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
-);
+// src/serviceWorkerRegistration.js
 
-export function register(config) {
-    if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
-        const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
-        if (publicUrl.origin !== window.location.origin) return;
-
-        window.addEventListener('load', () => {
-            const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
-            if (isLocalhost) {
-                checkValidServiceWorker(swUrl, config);
-            } else {
-                registerValidSW(swUrl, config);
-            }
-        });
-    }
-}
-
-function registerValidSW(swUrl, config) {
-    navigator.serviceWorker
-        .register(swUrl)
-        .then((registration) => {
+export function register() {
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register(process.env.PUBLIC_URL + "/service-worker.js")
+          .then((registration) => {
+            console.log("Service Worker registered");
+  
+            registration.update();
+  
             registration.onupdatefound = () => {
-                const installingWorker = registration.installing;
-                if (installingWorker == null) return;
-                installingWorker.onstatechange = () => {
-                    if (installingWorker.state === 'installed') {
-                        if (navigator.serviceWorker.controller) {
-                            console.log('New content available; please refresh.');
-                            if (config && config.onUpdate) config.onUpdate(registration);
-                        } else {
-                            console.log('Content cached for offline use.');
-                            if (config && config.onSuccess) config.onSuccess(registration);
-                        }
+              const installingWorker = registration.installing;
+  
+              if (!installingWorker) return;
+  
+              installingWorker.onstatechange = () => {
+                if (
+                  installingWorker.state === "installed" &&
+                  navigator.serviceWorker.controller
+                ) {
+                  console.log("New version found. Reloading...");
+  
+                  navigator.serviceWorker.addEventListener(
+                    "controllerchange",
+                    () => {
+                      window.location.reload();
                     }
-                };
+                  );
+  
+                  installingWorker.postMessage({
+                    type: "SKIP_WAITING",
+                  });
+                }
+              };
             };
-        })
-        .catch((error) => console.error('Service worker registration failed:', error));
-}
-
-function checkValidServiceWorker(swUrl, config) {
-    fetch(swUrl)
-        .then((response) => {
-            if (response.status === 404 || response.headers.get('content-type')?.indexOf('javascript') === -1) {
-                navigator.serviceWorker.ready.then((registration) => registration.unregister());
-            } else {
-                registerValidSW(swUrl, config);
-            }
-        })
-        .catch(() => console.log('No internet connection. App is running in offline mode.'));
-}
-
-export function unregister() {
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.ready
-            .then((registration) => registration.unregister())
-            .catch((error) => console.error(error.message));
+          })
+          .catch((err) => {
+            console.error("Service Worker registration failed:", err);
+          });
+      });
     }
-}
+  }
+  
+  export function unregister() {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.ready.then((registration) => {
+        registration.unregister();
+      });
+    }
+  }
