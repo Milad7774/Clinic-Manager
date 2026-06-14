@@ -13,7 +13,7 @@ const useSearchBar = (list, search) =>{
           );
           setData(filtered);
         }
-      }, [search]);
+      }, [list, search]);
       return {data}
 }
 export default useSearchBar
