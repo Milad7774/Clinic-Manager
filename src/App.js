@@ -18,8 +18,9 @@ const App = () => {
       </div>
       <Routes>
         <Route path="/" element = {<Navigate to='/Create' replace/>}/>
-        <Route path="/sessions/:id" element = {<Sessions/>}/>
-        <Route path="/PatientSessions/:id" element = {<PatientSessions/>}/>
+        <Route path="/sessions/:id/:add/:index" element = {<Sessions/>}/>
+        <Route path="/sessions/:id/:add/" element = {<Sessions/>}/>
+        <Route path="/PatientSessions/:id/" element = {<PatientSessions/>}/>
         <Route path="/View" element = { <View/> }/>
         <Route path="/Create" element = { <Create/> }/>
         <Route path="/Appointments" element = { <Appointments/> }/>

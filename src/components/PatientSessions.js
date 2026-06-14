@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const PatientSessions = () => {
 
@@ -92,8 +92,9 @@ const PatientSessions = () => {
                 <td>
                      { Number(item.paid).toLocaleString()}
                 </td>
-                <td>
-                  <span onClick={() => handleDelete(index)}>&#x274C;</span>
+                <td style={{display: "flex", justifyContent: "center", gap: "10px"}}>
+                  <Link to={`/sessions/${id}/${false}/${index}`}> <span title="Edit Session"> &#128221; </span> </Link> 
+                  <span title="Delete Session" onClick={() => handleDelete(index)}>&#x274C;</span>
                 </td>
               </tr>
             ))}

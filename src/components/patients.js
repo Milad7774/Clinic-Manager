@@ -47,12 +47,12 @@ const Patients = ({ list, onDelete }) => {
           <tbody>
             {data.map((item, index) => (
               <tr key={index}>
-                <td> <Link to={`/PatientSessions/${item.id}`}>  {item.name} </Link></td>
+                <td> <Link title="View Records" to={`/PatientSessions/${item.id}`}>  {item.name} </Link></td>
                 <td> {item.phoneNumber} </td>
-                <td>  { item.sessions.length || <Link to={`/sessions/${item.id}`}> Add </Link>}  </td>
+                <td>  { item.sessions.length || <Link to={`/sessions/${item.id}/${true}`}> Add </Link>}  </td>
                 <td style={{display:'flex', justifyContent:'center', gap: '10px'}}>
-                <Link to={`/sessions/${item.id}`} style={{textDecoration: 'none'}}><span> &#128137; </span> </Link>
-                  <span onClick={() => onDelete(item.id)}>&#x274C;</span>
+                <Link to={`/sessions/${item.id}/${true}`} style={{textDecoration: 'none'}}><span title="Add Session"> &#128137; </span> </Link>
+                  <span  title="Delete All Records" onClick={() => onDelete(item.id)}>&#x274C;</span>
                 </td>
               </tr>
             ))}
