@@ -49,9 +49,9 @@ const Patients = ({ list, onDelete }) => {
               <tr key={index}>
                 <td> <Link to={`/PatientSessions/${item.id}`}>  {item.name} </Link></td>
                 <td> {item.phoneNumber} </td>
-                <td>  { item.sessions.length || <Link to={`/sessions/${index}`}> Add </Link>}  </td>
+                <td>  { item.sessions.length || <Link to={`/sessions/${item.id}`}> Add </Link>}  </td>
                 <td style={{display:'flex', justifyContent:'center', gap: '10px'}}>
-                <Link to={`/sessions/${index}`} style={{textDecoration: 'none'}}><span> &#128137; </span> </Link>
+                <Link to={`/sessions/${item.id}`} style={{textDecoration: 'none'}}><span> &#128137; </span> </Link>
                   <span onClick={() => onDelete(item.id)}>&#x274C;</span>
                 </td>
               </tr>

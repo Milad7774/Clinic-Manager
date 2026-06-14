@@ -10,8 +10,10 @@ const Sessions = () => {
     JSON.parse(localStorage.getItem("mylist") || "[]"),
   );
 
+  let index = list.findIndex((item) => item.id === Number(id));
+
   //Session Object
-  const [sessions, setSessions] = useState(() => list[id].sessions);
+  const [sessions, setSessions] = useState(() => list[index].sessions);
 
   //Toast
   const success = () => toast.success("Added Successfully");
@@ -55,7 +57,7 @@ const Sessions = () => {
 
     // Update list in localStorage
     const updatedList = [...list];
-    updatedList[id] = { ...list[id], sessions: updatedSessions };
+    updatedList[index] = { ...list[index], sessions: updatedSessions };
     localStorage.setItem("mylist", JSON.stringify(updatedList));
 
     // Clear form
@@ -76,7 +78,7 @@ const Sessions = () => {
   return (
     <div className="div-form">
       <form onSubmit={handleData} className="form">
-        <h1> {list[id].name} </h1>
+        <h1> {list[index].name} </h1>
         <div>
           <label htmlFor="Date">
             Session Date:
