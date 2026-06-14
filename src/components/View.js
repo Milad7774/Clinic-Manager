@@ -12,8 +12,8 @@ const View = () => {
 
   function handleDelete(count) {
     if (window.confirm("You are About to Delete this Patient Record, Proceed?")) {
-      console.log("list before is:", list);
-      const newList = list.filter((_, i) => i !== count);
+      console.log("list before is: (",count,'):', list);
+      const newList = list.filter((item) => item.id !== count);
       SetList(newList);
       localStorage.setItem("mylist", JSON.stringify(newList));
       if (newList.length == 0) {

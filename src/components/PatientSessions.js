@@ -8,8 +8,13 @@ const PatientSessions = () => {
 
     const [list] = useState( () => JSON.parse(localStorage.getItem('mylist')));
 
-    const sessions = list.find((item) => item.id === Number(id));
-    console.log("New Sessions", sessions.sessions);
+    console.log(list);
+
+    let index = list.findIndex((item) => item.id === Number(id));
+
+    const sessions = list[index]
+    
+    console.log("New Sessions", sessions.sessions, 'index is:', index);
 
     const [patientSessions, setSessions] = useState(sessions.sessions)
 
@@ -29,13 +34,24 @@ const PatientSessions = () => {
     //functions
     function handleDelete(count){
         if(window.confirm("You are About to Delete this Session, Proceed?")){
-            console.log('list before is:', list);
+            console.log(list, "LIST");
             let newList = patientSessions.filter((_, i) => i !== count);
+            console.log("NEWLIST", newList)
             setSessions(newList);
             //Updating in local storage
             const deletedList = [...list];
-            deletedList[id] = {...list[id], sessions: newList }
+
+            console.log(deletedList, "This is deleted list");
+
+            console.log(deletedList[index], "DELETED LIST[",index,"]")
+            //Grabbing the patient sessions and replacing it with the deleted ones
+            deletedList[index] = {...list[index], sessions: newList }
+
+            console.log("Replaced list[", index, "] With this: ", deletedList[index]);
+
             localStorage.setItem('mylist', JSON.stringify(deletedList))
+
+            console.log(deletedList, "Deleted to be stored!!");
         }
         else{
             return;
