@@ -1,4 +1,6 @@
-const CACHE_NAME = "clinic-manager-v4";
+// public/service-worker.js
+
+const CACHE_NAME = "clinic-manager-v5";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -18,16 +20,18 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+self.addEventListener("message", (event) => {
+  if (event.data?.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      return fetch(event.request).then((networkResponse) => {
+    fetch(event.request)
+      .then((networkResponse) => {
         const responseClone = networkResponse.clone();
 
         caches.open(CACHE_NAME).then((cache) => {
@@ -35,7 +39,9 @@ self.addEventListener("fetch", (event) => {
         });
 
         return networkResponse;
-      });
-    })
+      })
+      .catch(() => {
+        return caches.match(event.request);
+      })
   );
 });
