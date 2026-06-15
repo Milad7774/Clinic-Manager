@@ -135,11 +135,13 @@ const useSessions = (list, id, add, index) => {
     const failed = () => toast.error("Please Fill All fields or Add (-)");
 
     //Definig Data
+    //Patient Records
     let Patient = list.findIndex((item) => item.id === Number(id));
 
     //Session Object
+    //Sessions of the patient
     const [sessions, setSessions] = useState(() => list[Patient].sessions);
-
+    //These are the current session info being Edited
     const [date, setDate] = useState(() => sessions[index].sessionDate);
 
     const [time, setTime] = useState(sessions[index].time);
@@ -195,7 +197,7 @@ const useSessions = (list, id, add, index) => {
      data = (
       <div className="div-form">
         <form onSubmit={handleData} className="form">
-          <h1> Editing {list[index].name} </h1>
+          <h1> Editing {list[Patient].name} </h1>
           <div>
             <label htmlFor="Date">Session Date:</label>
             <input

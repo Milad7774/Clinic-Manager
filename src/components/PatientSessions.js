@@ -1,17 +1,19 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 const PatientSessions = () => {
 
     //ID
     const { id } = useParams();
-
+    //Navigation to Add
+    const navigate = useNavigate();
+    //List with everything
     const [list] = useState( () => JSON.parse(localStorage.getItem('mylist')));
 
     console.log(list);
-
+    //Get patients index in list
     let index = list.findIndex((item) => item.id === Number(id));
-
+    //Get patietns Records
     const sessions = list[index]
     
     console.log("New Sessions", sessions.sessions, 'index is:', index);
@@ -61,7 +63,7 @@ const PatientSessions = () => {
 
   return (
     <div>
-        <div className="patientName" > {sessions.name} </div>
+        <div className="patientName" >{sessions.name} <span onClick={() => navigate(`/sessions/${id}/${true}`, {replace: true})} style={{cursor: "pointer"}}> &#10133; </span> </div>
       <div className="div-table">
         <table className="table">
           <thead>
