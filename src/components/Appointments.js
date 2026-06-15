@@ -37,6 +37,7 @@ const Appointments = () => {
           const patientSession = {
             name: itemList.name,
             session: itemSessions.sessionDate,
+            description: itemSessions.description,
             time: itemSessions.time,
             phoneNumber: itemList.phoneNumber,
           };
@@ -81,6 +82,7 @@ const Appointments = () => {
                 <tr>
                   <th>Name</th>
                   <th>Phone Number</th>
+                  <th>Description</th>
                   <th>Session Date</th>
                   <th>Session Time</th>
                 </tr>
@@ -91,6 +93,7 @@ const Appointments = () => {
                     <tr key={index}>
                       <td> {item.name} </td>
                       <td> {item.phoneNumber} </td>
+                      <td>{item.description}</td>
                       <td> {item.session} </td>
                       <td> {item.time} </td>
                     </tr>
