@@ -104,6 +104,7 @@ const PatientSessions = () => {
         </table>
       </div>
       <div className="total">
+        <div className="test">
         <div>
           <span className="total-text"> Total Paid: </span>
           <span className="total-number">{totalPaid.toLocaleString()} SYP</span>
@@ -111,6 +112,7 @@ const PatientSessions = () => {
         <div>
           <span className="total-text"> Total Sessions: </span>
           <span className="total-number">{totalSessoins}</span>
+        </div>
         </div>
       </div>
     </div>

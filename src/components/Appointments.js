@@ -9,8 +9,6 @@ const Appointments = () => {
 
   const [notFound, setNotFound] = useState(() => true);
 
-  const [stop, setStop] = useState(() => true);
-
   const [search, setSearch] = useState("");
 
   const sessions = useMemo(() =>{
@@ -28,8 +26,7 @@ const Appointments = () => {
           Number(minutes),
         );
   
-        if (Date_array >= new Date() && stop) {
-          setStop(false);
+        if (Date_array >= new Date()) {
           setNotFound(false);
         }
   
@@ -56,7 +53,7 @@ const Appointments = () => {
   }, [list]);
 
   
-  //Custom Hook After sorting session by Date
+  //Custom Hook After sorting session by Date for searching
   const {data} = useSearchBar(sessions, search);
 
   return (
