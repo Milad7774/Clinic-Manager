@@ -44,11 +44,12 @@ A comprehensive dental clinic management application built with React. Track pat
 - **Date API** - Date comparison and sorting
 
 ## Installatoin
-
+<pre>
 1- git clone https://github.com/Milad7774/Clinic-Manager.git
 2- Navigate to folder
 3- npm install
 4- npm start
+</pre>
 
 ## Feel free to support my development
   
