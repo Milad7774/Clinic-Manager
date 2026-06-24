@@ -43,7 +43,7 @@ A comprehensive dental clinic management application built with React. Track pat
 - **LocalStorage API** - Data persistence (patients + sessions)
 - **Date API** - Date comparison and sorting
 
-  ##Feel free to support my development
+  ## Feel free to support my development
   
   **Bitcoin**: bc1q4ms9askxfrk898kxnnsl0eptc6dle9h639vrxn
   **USDT(TRC20)**: TGfR8EPvUSDnoW7Ay16dhmRk6cwVQZnrXA
