@@ -130,7 +130,7 @@ const useSessions = (list, id, add, index) => {
   }
   function Edit() {
     //Toast
-    const success = () => toast.success("Added Successfully... Redirecting");
+    const success = () => toast.success("Edited Successfully... Redirecting");
 
     const failed = () => toast.error("Please Fill All fields or Add (-)");
 
