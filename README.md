@@ -45,5 +45,5 @@ A comprehensive dental clinic management application built with React. Track pat
 
   ## Feel free to support my development
   
-  **Bitcoin**: bc1q4ms9askxfrk898kxnnsl0eptc6dle9h639vrxn
+  **Bitcoin**: bc1q4ms9askxfrk898kxnnsl0eptc6dle9h639vrxn<br><br>
   **USDT(TRC20)**: TGfR8EPvUSDnoW7Ay16dhmRk6cwVQZnrXA
