@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import Sessions from "./components/SessionsAdd";
 import PatientSessions from "./components/PatientSessions";
 import Appointments from "./components/Appointments";
+import PatientDetails from "./components/PatientDetails";
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/View" element = { <View/> }/>
         <Route path="/Create" element = { <Create/> }/>
         <Route path="/Appointments" element = { <Appointments/> }/>
+        <Route path="/PatientDetails/:id" element = { <PatientDetails/> }/>
       </Routes>
     </div>
     </Router>

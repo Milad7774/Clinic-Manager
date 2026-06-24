@@ -10,6 +10,8 @@ const Create = () =>{
 
     const failed = () => toast.error('Name Field is empty!');
 
+    const phonFailed = () => toast.error("Phone must be Numeric")
+
     //input Data
     const [name, setName] = useState('');
 
@@ -20,6 +22,10 @@ const Create = () =>{
         if(name === ""){
             failed();
             return;
+        }
+        if(isNaN(phoneNumber)){
+            phonFailed();
+            return
         }
         else{
             const patients = {

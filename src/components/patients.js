@@ -71,10 +71,10 @@ const Patients = ({ list, onDelete }) => {
                     }}
                   >
                     <Link
-                      to={`/sessions/${item.id}/${true}`}
+                      to={`/PatientDetails/${item.id}`}
                       style={{ textDecoration: "none" }}
                     >
-                      <span title="Add Session"> &#128137; </span>{" "}
+                      <span title="Edit Patient"> &#128221; </span>{" "}
                     </Link>
                     <span
                       title="Delete All Records"
