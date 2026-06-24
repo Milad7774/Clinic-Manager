@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <header className="header">
+      <div className="support">
+        Developed By <NavLink to={"https://github.com/Milad7774/"}>Milad</NavLink>
+      </div>
       <span> Clinic Manager </span> 
       <div className="links">
         <NavLink
