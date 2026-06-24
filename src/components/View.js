@@ -12,10 +12,13 @@ const View = () => {
 
   function handleDelete(count) {
     if (window.confirm("You are About to Delete this Patient Record, Proceed?")) {
+      //Confirm deletion
       console.log("list before is: (",count,'):', list);
+      //Removing deleted item
       const newList = list.filter((item) => item.id !== count);
       SetList(newList);
       localStorage.setItem("mylist", JSON.stringify(newList));
+      //Display Nolist Component
       if (newList.length == 0) {
         SetList([]);
         setNotFound(true);

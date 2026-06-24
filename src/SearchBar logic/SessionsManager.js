@@ -54,7 +54,7 @@ const useSessions = (list, id, add, index) => {
         paid: paid.replace(/,/g, ""),
       };
 
-      // Update sessions state
+      // Sort sessions by Date
       let updatedSessions = [...sessions, session];
       updatedSessions.sort((a, b) => {
         const dateCompare = new Date(a.sessionDate) - new Date(b.sessionDate);
