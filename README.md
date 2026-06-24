@@ -43,7 +43,7 @@ A comprehensive dental clinic management application built with React. Track pat
 - **LocalStorage API** - Data persistence (patients + sessions)
 - **Date API** - Date comparison and sorting
 
-## Installatoin
+## Installation
 <pre>
 1- git clone https://github.com/Milad7774/Clinic-Manager.git
 2- Navigate to folder
