@@ -59,6 +59,7 @@ const EditPatient = () =>{
     
     return(
         <div className="div-form">
+            <span className="back-arrow" onClick={() => navigate('/View')}> &larr; </span>
             <form onSubmit={handleData} className="form">
                 <h1>Editing { list[index].name }</h1>
                 <div>

@@ -51,6 +51,7 @@ const Patients = ({ list, onDelete }) => {
                     <Link
                       title="View Records"
                       to={`/PatientSessions/${item.id}`}
+                      style={{color: "rgb(0, 3, 179)"}}
                     >
                       {" "}
                       {item.name}{" "}

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import Nolist from "./Nolist";
 import useSearchBar from "../SearchBar logic/SearchLogic";
+import { useNavigate } from "react-router-dom";
 
 
 const Appointments = () => {
@@ -10,6 +11,8 @@ const Appointments = () => {
   const [notFound, setNotFound] = useState(() => true);
 
   const [search, setSearch] = useState("");
+
+  const navigate = useNavigate();
 
   const sessions = useMemo(() =>{
     //Cannot access sessions because on next renders it update so need another variable to take place
@@ -37,6 +40,7 @@ const Appointments = () => {
             description: itemSessions.description,
             time: itemSessions.time,
             phoneNumber: itemList.phoneNumber,
+            id: itemList.id
           };
           result = [...result, patientSession];
         }
@@ -55,6 +59,7 @@ const Appointments = () => {
   
   //Custom Hook After sorting session by Date for searching
   const {data} = useSearchBar(sessions, search);
+  console.log(data)
 
   return (
     <div>
@@ -88,7 +93,7 @@ const Appointments = () => {
                 {data.map((item, index) => {
                   return (
                     <tr key={index}>
-                      <td> {item.name} </td>
+                      <td onClick={() => navigate(`/PatientSessions/${item.id}`, { replace: true })}> <span style={{cursor: "pointer", textDecoration: "underline", fontSize: "14px"}}> {item.name} </span>  </td>
                       <td> {item.phoneNumber} </td>
                       <td>{item.description}</td>
                       <td> {item.session} </td>

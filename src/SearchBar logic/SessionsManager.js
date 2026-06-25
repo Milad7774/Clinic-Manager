@@ -82,6 +82,7 @@ const useSessions = (list, id, add, index) => {
 
      data = (
       <div className="div-form">
+        <span className="back-arrow" onClick={() => navigate(`/PatientSessions/${id}`)}> &larr; </span>
         <form onSubmit={handleData} className="form">
           <h1> {list[index].name} </h1>
           <div>
@@ -196,6 +197,7 @@ const useSessions = (list, id, add, index) => {
 
      data = (
       <div className="div-form">
+        <span className="back-arrow" onClick={() => navigate(`/PatientSessions/${id}`)}> &larr; </span>
         <form onSubmit={handleData} className="form">
           <h1> Editing {list[Patient].name} </h1>
           <div>
