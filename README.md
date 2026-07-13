@@ -33,6 +33,7 @@ A comprehensive dental clinic management application built with React. Track pat
 -  Clean, professional medical-grade UI
 -  Toast notifications for success/error feedback
 -  Mobile-first responsive design
+-  Offline Support
 
 ## Technologies Used
 
@@ -42,6 +43,7 @@ A comprehensive dental clinic management application built with React. Track pat
 - **CSS3** - Styling with Flexbox/Grid
 - **LocalStorage API** - Data persistence (patients + sessions)
 - **Date API** - Date comparison and sorting
+
 
 ## Installation
 <pre>
